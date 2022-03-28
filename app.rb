@@ -1,12 +1,15 @@
 require 'sinatra/base'
-require './lib/bookmark.rb'
+require 'sinatra/reloader'
 
-class Bookmark < Sinatra::Base
-
-  get '/test' do
-    'test page'
+class BookmarkManager < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
   end
 
-  #Do not modify the line above
+  get '/' do
+    'Hello World'
+  end
+
+  #do not delete the following line
   run! if app_file == $0
 end
