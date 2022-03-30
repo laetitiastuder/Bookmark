@@ -16,4 +16,14 @@ RSpec.describe Bookmark do
       expect(bookmarks).to include("http://www.makersacademy.com/")
     end
   end
+
+  describe '.create' do
+    it 'create a new bookmark' do
+      Bookmark.create(url:'http://www.github.com')
+
+      expect(Bookmark.all_bookmarks).to include 'http://www.github.com'
+    end
+  end
+
+
 end
